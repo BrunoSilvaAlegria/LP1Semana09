@@ -16,7 +16,7 @@ namespace FilePower1
                 return;
             }
 
-            if (!File.Exists(filePath)) //Verifies if the file exists
+            if (!File.Exists(fileName)) //Verifies if the file exists
             {
                 Console.WriteLine("This file does not exist, " +
                 "please enter a valid file name.");
@@ -33,10 +33,13 @@ namespace FilePower1
                 //Reads and stores the written strings
                 fileLines = Console.ReadLine();
 
-                if (fileLines <= 0) break; //If the string is empty, exits
+                if (fileLines.Length <= 0) break; //If the string is empty, exits
 
                 strs.Enqueue(fileLines); //Adds the written strings to the queue
             }
+
+            //Puts the strings stored into the original file
+            File.WriteAllLines(fileName, strs); 
         }
     }
 }
