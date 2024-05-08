@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EqualPlayer
 {
@@ -8,6 +9,10 @@ namespace EqualPlayer
         {
             // Test code
             HashSet<Player> setOfPlayers = new HashSet<Player>();
+
+            setOfPlayers.Add(new Player(PlayerClass.Tank, "Ana"));
+            setOfPlayers.Add(new Player(PlayerClass.Slayer, "Paulo"));
+            setOfPlayers.Add(new Player(PlayerClass.Tank, "Ana"));
 
             foreach (Player p in setOfPlayers)
             {
