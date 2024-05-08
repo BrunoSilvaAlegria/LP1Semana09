@@ -27,6 +27,16 @@ namespace FilePower1
             Queue<string> strs = new Queue<string>();
 
             string fileLines; //Variable that stores the written strings
+
+            while(true)
+            {
+                //Reads and stores the written strings
+                fileLines = Console.ReadLine();
+
+                if (fileLines <= 0) break; //If the string is empty, exits
+
+                strs.Enqueue(fileLines); //Adds the written strings to the queue
+            }
         }
     }
 }
