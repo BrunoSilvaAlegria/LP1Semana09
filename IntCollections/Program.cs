@@ -30,7 +30,8 @@ namespace IntCollections
             {
                 str += $"{n}, ";
             }
-            Console.WriteLine(str.Remove(str.Length - 2));
+            //Order the numbers were inserted, with repeated numbers
+            Console.WriteLine(str.Remove(str.Length - 2)); 
 
             // For the Stack collection case
             str = "Stack: "; 
@@ -38,6 +39,7 @@ namespace IntCollections
             {
                 str += $"{n}, ";
             }
+            //LIFO order
             Console.WriteLine(str.Remove(str.Length - 2));
 
             // For the Queue collection case
@@ -46,6 +48,7 @@ namespace IntCollections
             {
                 str += $"{n}, ";
             }
+            //FIFO order
             Console.WriteLine(str.Remove(str.Length - 2));
 
             // For the HashSet collection case
@@ -54,6 +57,7 @@ namespace IntCollections
             {
                 str += $"{n}, ";
             }
+            //Order the numbers were inserted, without repeated numbers
             Console.WriteLine(str.Remove(str.Length - 2));
         }
     }
