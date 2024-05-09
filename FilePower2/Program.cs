@@ -9,7 +9,7 @@ namespace FilePower2
         static void Main(string[] args)
         {
             string fileName = args[0]; //Gets the argument
-            
+
             if (args.Length <= 0) //Verifies if the argument was entered
             {
                 Console.WriteLine("Please enter a file name.");
@@ -23,23 +23,11 @@ namespace FilePower2
                 return;
             }
 
-            //Queue to store future written strings
-            Queue<string> strs = new Queue<string>();
+            //Opens the file for writing 
+            using StreamWriter strs = new StreamWriter(fileName);
 
-            string fileLines; //Variable that stores the written strings
-
-            while(true)
-            {
-                //Reads and stores the written strings
-                fileLines = Console.ReadLine();
-
-                if (fileLines.Length <= 0) break; //If the string is empty, exits
-
-                strs.Enqueue(fileLines); //Adds the written strings to the queue
-            }
-
-            //Puts the strings stored into the original file
-            File.WriteAllLines(fileName, strs); 
-        }
+            strs.WriteLine("LP1 is good! :D"); //Writes this line in the file
+        
+        } //File is close automatically due to the keyword "using" being used
     }
 }
