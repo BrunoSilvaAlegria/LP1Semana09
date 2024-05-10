@@ -20,10 +20,20 @@ namespace FilePower2
                     //Determines the end of the file or an error
                     while (strs.Peek() > -1) 
                     {
-                        
+                        //Reads the file line by line
+                        string line = strs.ReadLine();
+                        if (line.Length > 1)
+                        {
+                            Console.WriteLine("Error!");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine(line);
+                        }
                     } 
                 } 
             }        
-        } //File is close automatically due to the keyword "using" being used
+        } //File is closed automatically due to the keyword "using" being used
     }
 }
