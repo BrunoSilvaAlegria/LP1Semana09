@@ -8,7 +8,7 @@ namespace CharSets
     {
         static void Main(string[] args)
         {
-            for (int n = 0; n <= args.Length; n++ ) //Gets all the files
+            for (int n = 0; n < args.Length; n++ ) //Gets all the files
             {
                 //Gets the argument correspondent to a position
                 string fileName = args[n];
@@ -37,13 +37,24 @@ namespace CharSets
                             foreach (char c in line)
                             {
                                 chars.Add(c); //Character addition to storage
-                                chars.IntersectWith(args[n + 1]);
                             }
                         }
                     }
 
                 } //File is closed automatically due to the keyword "using"
                 else Console.WriteLine($"File {fileName} does not exist");
+            
+                //Interception with the other files
+                for (int i = 1; i < args.Length; i++) 
+                {
+                    chars.IntersectWith(args[i]);
+                }
+                
+                foreach(char ch in chars)
+                {
+                    //Prints a character that is present in all the files
+                    Console.WriteLine(ch);
+                }
             }        
         } 
     }
